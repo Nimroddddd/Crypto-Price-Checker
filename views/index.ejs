@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+  <div class="title">
+    <h1>Cryptocurrency Prices</h1>
+  </div>
+  <div class="card-container">
+    <div class="image-card" id="first-card">
+      <h2>Bitcoin</h2>
+      <p>$<%=base.bitcoin%></p>
+    </div>
+    <div class="image-card" id="second-card">
+      <h2>Solana</h2>
+      <p>$<%=base.solana%></p>
+    </div>
+    <div class="image-card" id="third-card">
+      <h2>Polygon</h2>
+      <p>$<%=base.polygon%></p>
+    </div>
+  </div>
+  <div>
+    <form action="/" method="post">
+      <label for="address">Input Contract Adress:</label>
+      <input type="text" name="address" id="address">
+      <input type="submit" value="Search" name="contractAdress" formaction="/">
+    </form>
+  </div>
+  <div class="checker">
+
+  </div>
+</div>
+
+<%- include("partials/header.ejs") %>
