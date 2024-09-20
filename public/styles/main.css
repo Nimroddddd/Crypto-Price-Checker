@@ -69,4 +69,9 @@ h2 {
     .card-container {
         flex-direction: column;
     }
+
+    .container {
+        height: 100%;
+
+    }
 }
