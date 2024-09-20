@@ -1,7 +1,9 @@
+//imoirts
 import express from 'express';
 import axios from 'axios';
 import bodyParser from 'body-parser';
 
+// declarations of variables
 const app = express();
 const port = 3000;
 const api_config = {
@@ -9,8 +11,8 @@ const api_config = {
 };
 var data = {}
 var coinPrice = ''
-var addressString = ''
 
+//default config for getting the prices of the three base coins from coingecko
 const config = {
 	params: {
 		'ids': 'ethereum,solana,polygon-ecosystem-token',
