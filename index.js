@@ -22,11 +22,13 @@ const config = {
 }
 
 
-
+//middlewares
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+
+//homepage
 app.get("/", async (req, res) => {
   try {
 		const response = await axios.get("https://api.coingecko.com/api/v3/simple/price", config);
@@ -39,6 +41,8 @@ app.get("/", async (req, res) => {
 	}
 });
 
+
+//uses middleware to collect form data from user, then submits the relevant data to coingecko api to return the coin price.
 app.post("/", async (req, res) => {
   console.log(req.body);
   const param = new PriceSearch(req.body.address);
@@ -57,17 +61,20 @@ app.post("/", async (req, res) => {
 })
 
 
-
+//port listener
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
 })
 
+//constructor function to simplify passing data to the homepage res.render
 function Prices (x,y,z) {
 	this.ethereum = x;
 	this.solana = y;
 	this.polygon = z;
 }
 
+
+// constructor function to simplify data to push to coingecko api
 function PriceSearch (x) {
   this.contract_addresses = x,
   this.vs_currencies = 'usd'
