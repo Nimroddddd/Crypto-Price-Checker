@@ -45,7 +45,7 @@ app.post("/", async (req, res) => {
   try {
     const response = await axios.get('https://api.coingecko.com/api/v3/simple/token_price/' + req.body.chain, searchConfig);
     const result = response.data;
-    console.log(coinPrice);
+    console.log(result);
     coinPrice = result[req.body.address].usd
     res.redirect("/"); 
   } catch(error) {
@@ -61,7 +61,7 @@ app.listen(port, () => {
 })
 
 function Prices (x,y,z) {
-	this.bitcoin = x;
+	this.ethereum = x;
 	this.solana = y;
 	this.polygon = z;
 }
