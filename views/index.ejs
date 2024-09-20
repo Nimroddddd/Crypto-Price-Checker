@@ -17,12 +17,24 @@
       <p>$<%=base.polygon%></p>
     </div>
   </div>
-  <div>
-    <form action="/" method="post">
+  <div style="margin-top: 20px;">
+    <form method="post">
       <label for="address">Input Contract Adress:</label>
       <input type="text" name="address" id="address">
+      <label for="chainn">Choose a Chain</label>
+      <select name="chain" id="chainn">
+        <option value="ethereum">Ethereum</option>
+        <option value="solana">Solana</option>
+        <option value="base">Base</option>
+        <option value="arbitrum-one">Arbitrum</option>
+        <option value="polygon-pos">Polygon</option>
+      </select>
       <input type="submit" value="Search" name="contractAdress" formaction="/">
     </form>
+    <br>
+    <% if (locals.price) {%>
+      <h4>$<%=price%></h4>
+    <%}%>
   </div>
   <div class="checker">
 

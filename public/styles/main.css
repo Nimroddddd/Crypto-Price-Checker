@@ -64,3 +64,9 @@ h2 {
 .image-card>p {
     font-size: 40px;
 }
+
+@media (max-width:1090px) {
+    .card-container {
+        flex-direction: column;
+    }
+}
