@@ -37,7 +37,7 @@ app.get("/", async (req, res) => {
 		res.render("index.ejs", {base: data, price: coinPrice})
   } catch(error) {
 		console.log(error.message)
-		res.render()
+		res.redirect("/")
 	}
 });
 
@@ -48,11 +48,12 @@ app.post("/", async (req, res) => {
   const param = new PriceSearch(req.body.address);
   const searchConfig = {params: param};
   console.log(req.body.address);
+  const tokenAddress = `${req.body.address}`
   try {
     const response = await axios.get('https://api.coingecko.com/api/v3/simple/token_price/' + req.body.chain, searchConfig);
     const result = response.data;
     console.log(result);
-    coinPrice = result[req.body.address].usd
+    coinPrice = result[tokenAddress].usd
     res.redirect("/"); 
   } catch(error) {
     console.log(error.message);
