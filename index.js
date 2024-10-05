@@ -23,7 +23,7 @@ const config = {
 		'ids': 'ethereum,solana,polygon-ecosystem-token',
 		'vs_currencies': 'usd'
 	},
-  headers: { 'x-cg-demo-api-key': 'CG-xodBnwJDy2qt32AL3VEtHdu'}
+  headers: { 'x-cg-demo-api-key': process.env.API_KEY}
 }
 
 
